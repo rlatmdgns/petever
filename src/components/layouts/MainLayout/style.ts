@@ -22,12 +22,10 @@ export const Left = styled.section`
     background: #fff;
   }
 `
-export const Logo = styled.h1`
-  font-size: 30px;
-`
+
 export const Title = styled.p`
   position: fixed;
-  top: 30%;
+  top: 40%;
   font-size: 40px;
 `
 
@@ -39,6 +37,7 @@ export const Right = styled.div`
   border-width: 0 1px;
   border-style: solid;
   border-color: #e1e1e1;
+  padding: 0 0 56px 0;
 
   ${(props) => props.theme.viewSizes.PC} {
     margin: 0 0 0 calc(50vw);

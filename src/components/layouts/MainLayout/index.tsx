@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react'
 import * as Styles from './style'
 import { useRouter } from 'next/router'
+import Navigation from '@components/layouts/Navigation'
+
 
 interface MainLayoutProps {
   children: ReactNode
@@ -17,10 +19,12 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <Styles.Wrapper>
       <Styles.Left>
-        <Styles.Logo>로고</Styles.Logo>
         <Styles.Title>반려동물 커뮤니티 펫에버</Styles.Title>
       </Styles.Left>
-      <Styles.Right>{children}</Styles.Right>
+      <Styles.Right>
+        {children}
+        <Navigation />
+      </Styles.Right>
     </Styles.Wrapper>
   )
 }
