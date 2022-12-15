@@ -3,6 +3,7 @@ import * as Styles from './style'
 import { useRouter } from 'next/router'
 import Navigation from '@components/layouts/Navigation'
 
+
 interface MainLayoutProps {
   children: ReactNode
 }
