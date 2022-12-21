@@ -4,7 +4,16 @@ const nextConfig = {
   swcMinify: true,
   compiler: {
     // ssr and displayName are configured by default
-    styledComponents: true,
+    styledComponents: {
+      ssr: true,
+      displayName: true,
+      pure: true,
+    },
+  },
+  experimental: {
+    fontLoaders: [
+      { loader: '@next/font/google', options: { subsets: ['latin'] } },
+    ],
   },
 }
 
