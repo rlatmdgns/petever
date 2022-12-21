@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
     border: none;
     box-sizing: border-box;
 
+
     &:focus,
     &:active {
       outline: none;
@@ -26,6 +27,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: ${notoSans.style.fontFamily}, ${roboto.style.fontFamily}, 'sans-serif';
+    line-height: 1.5;
   }
 
   input {

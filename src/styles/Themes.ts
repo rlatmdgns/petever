@@ -3,12 +3,22 @@ import { DefaultTheme } from 'styled-components'
 /**
  * Color System
  */
-// const colors = {}
+const colors = {
+  BLACK: '#222',
+  GREEN: '#00C381',
+  RED: '#FF5151',
+  BLUE: '#7790DB',
+  GRAY: '#999',
+}
 
-// const fonts = {}
+const fonts = {
+  14: '14px Noto Sans KR Roboto; letter-spacing: -0.01em',
+  20: '20px/30px Noto Sans KR Roboto; letter-spacing: -0.02em',
+}
 
 const fontWeights = {
   REGULAR: 400,
+  SEMI_BOLD: 500,
   BOLD: 700,
 }
 
@@ -18,8 +28,8 @@ const viewSizes = {
 }
 
 const Themes: DefaultTheme = {
-  // colors,
-  // fonts,
+  colors,
+  fonts,
   fontWeights,
   viewSizes,
 }

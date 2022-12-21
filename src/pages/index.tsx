@@ -1,14 +1,5 @@
-import { ReactElement } from 'react'
-import MainHeader from '@components/layouts/MainHeader'
+import HomeTemplate from '@templates'
 
 export default function Home() {
-  return <>홈</>
-}
-Home.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <>
-      <MainHeader />
-      {page}
-    </>
-  )
+  return <HomeTemplate />
 }
