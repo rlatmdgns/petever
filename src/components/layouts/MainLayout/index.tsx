@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react'
 import * as Styles from './style'
 import { useRouter } from 'next/router'
-import Navigation from '@components/layouts/Navigation'
-
+import MainHeader from '@components/layouts/MainHeader'
 
 interface MainLayoutProps {
   children: ReactNode
@@ -18,13 +17,8 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
   return (
     <Styles.Wrapper>
-      <Styles.Left>
-        <Styles.Title>반려동물 커뮤니티 펫에버</Styles.Title>
-      </Styles.Left>
-      <Styles.Right>
-        {children}
-        <Navigation />
-      </Styles.Right>
+      <MainHeader />
+      {children}
     </Styles.Wrapper>
   )
 }

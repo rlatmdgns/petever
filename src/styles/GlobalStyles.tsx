@@ -1,11 +1,23 @@
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
+import { Noto_Sans_KR, Roboto } from '@next/font/google'
 
+const roboto = Roboto({
+  weight: ['400', '500', '700'],
+  style: ['normal'],
+  subsets: ['latin'],
+})
+const notoSans = Noto_Sans_KR({
+  weight: ['400', '500', '700'],
+  style: ['normal'],
+  subsets: ['latin'],
+})
 const GlobalStyles = createGlobalStyle`
   ${reset}
   * {
     border: none;
     box-sizing: border-box;
+
 
     &:focus,
     &:active {
@@ -14,7 +26,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-family: ${notoSans.style.fontFamily}, ${roboto.style.fontFamily}, 'sans-serif';
+    line-height: 1.5;
   }
 
   input {

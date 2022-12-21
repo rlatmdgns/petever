@@ -1,5 +1,2 @@
-export const PAGE = {
-  HOME: '/',
-  CONTENTS: '/contents',
-  COMMUNITY: '/community',
-}
+export * from './pageUrl'
+export * from './imgUrl'

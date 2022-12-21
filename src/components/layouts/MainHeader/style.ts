@@ -1,12 +1,24 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.header`
-  position: sticky;
-  top: 0;
+export const Wrapper = styled.header``
+export const Inner = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
-  max-width: 420px;
+  justify-content: space-between;
+  max-width: 1200px;
   height: 50px;
-  border-bottom: 1px solid #ddd;
+  margin: 0 auto;
+`
+export const Logo = styled.h1``
+
+export const Nav = styled.nav`
+  a {
+    font: ${(props) => props.theme.fonts[14]};
+    color: ${(props) => props.theme.colors.BLACK};
+    font-weight: ${(props) => props.theme.fontWeights.SEMI_BOLD};
+  }
+
+  a + a {
+    margin-left: 24px;
+  }
 `
