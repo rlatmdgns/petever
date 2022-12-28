@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   overflow: hidden;
-  max-width: 373px;
+  max-width: 335px;
   height: 468px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -26,7 +26,7 @@ export const Tag = styled.em`
 
 export const Title = styled.p`
   display: -webkit-box;
-  max-height: 60px;
+  height: 60px;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;

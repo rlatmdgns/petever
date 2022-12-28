@@ -25,7 +25,7 @@ const Card = ({ content }: CardProps) => {
           <Image
             src={content?.image}
             width={335}
-            height={340}
+            height={330}
             alt={content?.title}
           />
         )}
