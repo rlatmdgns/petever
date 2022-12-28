@@ -1,21 +1,25 @@
 import React from 'react'
 import * as Styles from './style'
 
-const Card = () => {
+interface CardProps {
+  content: any
+}
+
+const Card = ({ content }: CardProps) => {
+  const date = new Date(content.created).toLocaleDateString()
+  
   return (
     <Styles.Wrapper>
       <Styles.Header>
         <Styles.Info>
-          <Styles.Tag>힐링</Styles.Tag>
-          <Styles.Date>2023.01.22</Styles.Date>
+          <Styles.Tag>{content?.main_category}</Styles.Tag>
+          <Styles.Date>{date}</Styles.Date>
         </Styles.Info>
-        <Styles.Title>
-          우리 댕댕이가 좋아할 만한 노즈워크 모아보기 우리 댕댕이가 좋아할 만한
-          노즈워크 모아보기 우리 댕댕이가 좋아할 만한 노즈워크 모아보기 우리
-          댕댕이가 좋아할 만한 노즈워크 모아보기
-        </Styles.Title>
+        <Styles.Title>{content?.title}</Styles.Title>
       </Styles.Header>
-      <Styles.ImageBox></Styles.ImageBox>
+      <Styles.ImageBox>
+        {/*{content?.image && <Image src={content?.image} alt={content?.title} />}*/}
+      </Styles.ImageBox>
     </Styles.Wrapper>
   )
 }

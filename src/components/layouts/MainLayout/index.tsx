@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import * as Styles from './style'
 import { useRouter } from 'next/router'
-import MainHeader from '@components/layouts/MainHeader'
+import MainHeader from '@/components/layouts/MainHeader'
 
 interface MainLayoutProps {
   children: ReactNode
