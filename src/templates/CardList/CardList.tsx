@@ -3,7 +3,7 @@ import * as Styles from './styles'
 import Card from '@/components/molecules/Card'
 import { useQuery } from 'react-query'
 import { QUERY_KEY } from '@/constants'
-import { getContents } from '@/service/getContents/getContents'
+import { getContents } from '@/service/getContents'
 
 const CardList = () => {
   const { data: contents } = useQuery([QUERY_KEY.CONTENTS], () => getContents())
