@@ -10,6 +10,9 @@ const nextConfig = {
       pure: true,
     },
   },
+  images: {
+    domains: ['s3.us-west-2.amazonaws.com'],
+  },
   experimental: {
     fontLoaders: [
       { loader: '@next/font/google', options: { subsets: ['latin'] } },
