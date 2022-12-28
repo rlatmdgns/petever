@@ -1,24 +1,34 @@
 import React from 'react'
 import * as Styles from './style'
+import dayjs from 'dayjs'
+import Image from 'next/image'
+import { Content } from '@/service/getContents/contents.type'
 
 interface CardProps {
-  content: any
+  content: Content
 }
 
 const Card = ({ content }: CardProps) => {
-  const date = new Date(content.created).toLocaleDateString()
-  
   return (
     <Styles.Wrapper>
       <Styles.Header>
         <Styles.Info>
           <Styles.Tag>{content?.main_category}</Styles.Tag>
-          <Styles.Date>{date}</Styles.Date>
+          <Styles.Date>
+            {dayjs(content.created).format('YYYY.MM.DD')}
+          </Styles.Date>
         </Styles.Info>
         <Styles.Title>{content?.title}</Styles.Title>
       </Styles.Header>
       <Styles.ImageBox>
-        {/*{content?.image && <Image src={content?.image} alt={content?.title} />}*/}
+        {content?.image && (
+          <Image
+            src={content?.image}
+            width={335}
+            height={340}
+            alt={content?.title}
+          />
+        )}
       </Styles.ImageBox>
     </Styles.Wrapper>
   )

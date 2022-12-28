@@ -1,13 +1,14 @@
 import React from 'react'
 import * as Styles from './styles'
 import Card from '@/components/molecules/Card'
-import { useQuery } from 'react-query'
-import { QUERY_KEY } from '@/constants'
-import { getContents } from '@/service/getContents'
+import { Content } from '@/service/getContents/contents.type'
 
-const CardList = () => {
-  const { data: contents } = useQuery([QUERY_KEY.CONTENTS], () => getContents())
+interface CardListProps {
+  contents: Content[]
+}
 
+const CardList = ({ contents }: CardListProps) => {
+  console.log(contents)
   return (
     <Styles.Wrapper>
       {contents?.map((content) => {

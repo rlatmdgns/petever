@@ -45,6 +45,6 @@ export const Date = styled.span`
 export const ImageBox = styled.div`
   min-width: 335px;
   width: 100%;
-  height: 310px;
+  height: 340px;
   background: ${(props) => props.theme.colors.GRAY};
 `
