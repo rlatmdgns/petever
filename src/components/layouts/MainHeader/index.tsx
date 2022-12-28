@@ -1,6 +1,6 @@
 import React from 'react'
 import * as Styles from './style'
-import { IMAGES, PAGE } from '@constants'
+import { IMAGES, PAGE } from '@/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 
