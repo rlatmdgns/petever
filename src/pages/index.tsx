@@ -12,13 +12,18 @@ export default function Home({ contents }: HomePageProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
-  )
-  const contents = await getContents()
+  try {
+    res.setHeader(
+      'Cache-Control',
+      'public, s-maxage=10, stale-while-revalidate=59'
+    )
+    const contents = await getContents()
 
-  return {
-    props: { contents },
+    return {
+      props: { contents },
+    }
+  } catch (error) {
+    console.error(error)
+    throw error
   }
 }
