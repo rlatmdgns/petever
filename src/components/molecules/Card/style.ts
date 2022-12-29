@@ -2,8 +2,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   overflow: hidden;
-  max-width: 335px;
-  height: 468px;
+  max-width: 370px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   background: #fff;
@@ -43,8 +42,8 @@ export const Date = styled.span`
 `
 
 export const ImageBox = styled.div`
-  min-width: 335px;
+  min-width: 370px;
   width: 100%;
-  height: 330px;
+  height: 350px;
   background: ${(props) => props.theme.colors.GRAY};
 `
