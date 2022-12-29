@@ -1,5 +1,6 @@
-import { DefaultTheme } from 'styled-components'
+import css from 'styled-jsx/css'
 import { notoSans, roboto } from '@/styles/GlobalStyles'
+import { DefaultTheme } from 'styled-components'
 
 /**
  * Color System
@@ -13,8 +14,17 @@ const colors = {
 }
 
 const fonts = {
-  14: `14px ${notoSans.style.fontFamily} ${roboto.style.fontFamily}; letter-spacing: -0.01em`,
-  20: `20px/30px ${notoSans.style.fontFamily} ${roboto.style.fontFamily}; letter-spacing: -0.02em`,
+  14: css`
+    font-size: 14px;
+    // font-family: ${notoSans.style.fontFamily}, ${roboto.style.fontFamily};
+    letter-spacing: -0.01em;
+  `,
+  20: css`
+    font-size: 20px;
+    line-height: 30px;
+    //font-family: ${notoSans.style.fontFamily}, ${roboto.style.fontFamily};
+    letter-spacing: -0.02em;
+  `,
 }
 
 const fontWeights = {

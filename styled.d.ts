@@ -10,8 +10,8 @@ declare module 'styled-components' {
       GRAY: string
     }
     fonts: {
-      14: string
-      20: string
+      14: any
+      20: any
     }
     fontWeights: { REGULAR: number; SEMI_BOLD: number; BOLD: number }
     viewSizes: { MB: string; PC: string }
