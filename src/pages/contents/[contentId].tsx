@@ -2,14 +2,14 @@ import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getContent } from '@/service/getContent'
 import { getContents } from '@/service/getContents'
+import ContentDetailTemplate from '@/templates/ContentDetailTemplate'
 
 interface ContentPageProps {
   content: any
 }
 
 const ContentPage = ({ content }: ContentPageProps) => {
-  console.log(content)
-  return <div></div>
+  return <ContentDetailTemplate content={content} />
 }
 
 export const getStaticProps: GetStaticProps = async (ctx) => {

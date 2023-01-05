@@ -13,7 +13,7 @@ export const Logo = styled.h1``
 
 export const Nav = styled.nav`
   a {
-    font: ${(props) => props.theme.fonts[14]};
+    ${(props) => props.theme.fonts[14]};
     color: ${(props) => props.theme.colors.BLACK};
     font-weight: ${(props) => props.theme.fontWeights.SEMI_BOLD};
   }

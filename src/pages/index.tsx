@@ -1,4 +1,4 @@
-import HomeTemplate from '@/templates'
+import HomeTemplate from '@/templates/Hometemplate'
 import { GetServerSideProps } from 'next'
 import { getContents } from '@/service/getContents'
 import { Content } from '@/service/getContents/contents.type'

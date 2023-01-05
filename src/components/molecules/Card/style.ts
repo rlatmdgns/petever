@@ -31,13 +31,13 @@ export const Title = styled.p`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   margin-top: 12px;
-  font: ${(props) => props.theme.fonts[20]};
+  ${(props) => props.theme.fonts[20]};
   font-weight: ${(props) => props.theme.fontWeights.BOLD};
   color: ${(props) => props.theme.colors.BLACK};
 `
 
 export const Date = styled.span`
-  font: ${(props) => props.theme.fonts[14]};
+  ${(props) => props.theme.fonts[14]};
   color: ${(props) => props.theme.colors.GRAY};
 `
 

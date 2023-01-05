@@ -17,9 +17,22 @@ const fonts = {
     font-size: 14px;
     letter-spacing: -0.01em;
   `,
+  16: css`
+    font-size: 16px;
+    letter-spacing: -0.01em;
+  `,
   20: css`
     font-size: 20px;
     line-height: 30px;
+    letter-spacing: -0.02em;
+  `,
+  22: css`
+    font-size: 22px;
+    letter-spacing: -0.02em;
+  `,
+  30: css`
+    font-size: 30px;
+    line-height: 44px;
     letter-spacing: -0.02em;
   `,
 }
