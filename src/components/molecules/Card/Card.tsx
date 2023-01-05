@@ -26,7 +26,7 @@ const Card = ({ content }: CardProps) => {
         <Styles.ImageBox>
           {content?.image && (
             <Image
-              src={content?.image}
+              src={`${process.env.NEXT_PUBLIC_DEV_HOST}${content?.image}`}
               width={370}
               height={350}
               alt={content?.title}
