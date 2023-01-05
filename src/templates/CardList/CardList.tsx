@@ -10,9 +10,9 @@ interface CardListProps {
 const CardList = ({ contents }: CardListProps) => {
   return (
     <Styles.Wrapper>
-      {contents?.map((content) => {
-        return <Card key={content.uid} content={content} />
-      })}
+      {contents?.map((content) => (
+        <Card key={content.uid} content={content} />
+      ))}
     </Styles.Wrapper>
   )
 }
