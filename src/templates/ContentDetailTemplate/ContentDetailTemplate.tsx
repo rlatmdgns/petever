@@ -25,10 +25,11 @@ const ContentDetailTemplate = ({ content }: ContentTemplateProps) => {
         <Styles.Title>{title}</Styles.Title>
       </Styles.Banner>
       <Styles.Content>
-        {contents.map((item: any) => {
+        {contents.map((item: any, index: number) => {
           if (item.type === IMAGE_TYPE) {
             return (
               <Image
+                key={`content_${index}`}
                 src={`${process.env.NEXT_PUBLIC_DEV_HOST}${item.contents}`}
                 width={800}
                 height={800}
@@ -37,9 +38,13 @@ const ContentDetailTemplate = ({ content }: ContentTemplateProps) => {
             )
           }
           if (item.type === HEADING2) {
-            return <Styles.SubTitle>{item.contents}</Styles.SubTitle>
+            return (
+              <Styles.SubTitle key={`content_${index}`}>
+                {item.contents}
+              </Styles.SubTitle>
+            )
           }
-          return <BreakLine text={item.contents} />
+          return <BreakLine key={`content_${index}`} text={item.contents} />
         })}
       </Styles.Content>
     </Styles.Wrapper>
