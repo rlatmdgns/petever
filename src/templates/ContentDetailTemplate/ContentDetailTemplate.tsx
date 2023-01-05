@@ -18,7 +18,6 @@ const ContentDetailTemplate = ({ content }: ContentTemplateProps) => {
     (content: any) => content.type === IMAGE_TYPE
   ).contents
 
-  console.log(content)
   return (
     <Styles.Wrapper>
       <Styles.Banner image={firstImage}>

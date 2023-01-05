@@ -20,7 +20,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       props: {
         content,
       },
-      revalidate: 10,
     }
   } catch (err) {
     console.error(err)
