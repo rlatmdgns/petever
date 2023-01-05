@@ -14,6 +14,8 @@ const ContentDetailTemplate = ({ content }: ContentTemplateProps) => {
   const { title } = content.title
   const { contents } = content
 
+  if (content) return null
+
   const firstImage = contents?.find(
     (content: any) => content.type === IMAGE_TYPE
   ).contents
