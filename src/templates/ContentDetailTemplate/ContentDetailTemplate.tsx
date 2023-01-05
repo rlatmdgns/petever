@@ -11,12 +11,14 @@ const IMAGE_TYPE = 'image'
 const HEADING2 = 'heading_2'
 
 const ContentDetailTemplate = ({ content }: ContentTemplateProps) => {
-  const { title } = content.title
+  if (!content) return null
+
+  const { title } = content?.title
   const { contents } = content
 
   const firstImage = contents?.find(
     (content: any) => content.type === IMAGE_TYPE
-  ).contents
+  )?.contents
 
   if (!content) return null
 
