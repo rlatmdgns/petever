@@ -1,5 +1,4 @@
 import css from 'styled-jsx/css'
-import { notoSans, roboto } from '@/styles/GlobalStyles'
 import { DefaultTheme } from 'styled-components'
 
 /**
@@ -16,13 +15,11 @@ const colors = {
 const fonts = {
   14: css`
     font-size: 14px;
-    // font-family: ${notoSans.style.fontFamily}, ${roboto.style.fontFamily};
     letter-spacing: -0.01em;
   `,
   20: css`
     font-size: 20px;
     line-height: 30px;
-    //font-family: ${notoSans.style.fontFamily}, ${roboto.style.fontFamily};
     letter-spacing: -0.02em;
   `,
 }

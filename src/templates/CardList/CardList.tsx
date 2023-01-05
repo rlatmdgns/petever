@@ -8,7 +8,6 @@ interface CardListProps {
 }
 
 const CardList = ({ contents }: CardListProps) => {
-  console.log(contents)
   return (
     <Styles.Wrapper>
       {contents?.map((content) => {

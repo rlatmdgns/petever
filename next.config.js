@@ -11,7 +11,7 @@ const nextConfig = {
     },
   },
   images: {
-    domains: ['s3.us-west-2.amazonaws.com'],
+    domains: ['api.petever.pet'],
   },
   experimental: {
     fontLoaders: [
