@@ -18,7 +18,13 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
       'public, s-maxage=10, stale-while-revalidate=59'
     )
     const contents = await getContents()
-    console.log(contents, 'promise')
+
+    if (!contents) {
+      return {
+        props: {},
+      }
+    }
+
     return {
       props: { contents },
     }
