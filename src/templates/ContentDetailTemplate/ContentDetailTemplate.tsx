@@ -31,10 +31,9 @@ const ContentDetailTemplate = ({ content }: ContentTemplateProps) => {
         {contents.map((item: any, index: number) => {
           if (item.type === IMAGE_TYPE) {
             return (
-              <Styles.ImageBox>
+              <Styles.ImageBox key={`content_${index}`}>
                 <Image
                   className="autoImage"
-                  key={`content_${index}`}
                   src={`${process.env.NEXT_PUBLIC_DEV_HOST}${item.contents}`}
                   fill
                   sizes={'(max-width: 480px) 100vw, 800px'}
