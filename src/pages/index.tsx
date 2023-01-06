@@ -11,12 +11,8 @@ export default function Home({ contents }: HomePageProps) {
   return <HomeTemplate contents={contents} />
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    res.setHeader(
-      'Cache-Control',
-      'public, s-maxage=10, stale-while-revalidate=59'
-    )
     const contents = await getContents()
 
     if (!contents) {
