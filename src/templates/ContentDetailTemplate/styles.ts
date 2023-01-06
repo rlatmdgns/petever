@@ -39,11 +39,21 @@ export const Title = styled.p`
 `
 
 export const Content = styled.div`
-  width: 800px;
+  max-width: 800px;
   padding: 40px 0;
   margin: 0 auto;
   ${(props) => props.theme.fonts[16]};
   color: #555;
+`
+
+export const ImageBox = styled.div`
+  position: relative;
+  
+  & .autoImage {
+    display: block;
+    position: relative !important;
+    height: auto !important;
+  }
 `
 
 export const SubTitle = styled.p`
