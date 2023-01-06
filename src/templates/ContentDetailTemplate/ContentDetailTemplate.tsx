@@ -31,13 +31,15 @@ const ContentDetailTemplate = ({ content }: ContentTemplateProps) => {
         {contents.map((item: any, index: number) => {
           if (item.type === IMAGE_TYPE) {
             return (
-              <Image
-                key={`content_${index}`}
-                src={`${process.env.NEXT_PUBLIC_DEV_HOST}${item.contents}`}
-                width={800}
-                height={800}
-                alt="상세이미지"
-              />
+              <Styles.ImageBox key={`content_${index}`}>
+                <Image
+                  className="autoImage"
+                  src={`${process.env.NEXT_PUBLIC_DEV_HOST}${item.contents}`}
+                  fill
+                  sizes={'(max-width: 480px) 100vw, 800px'}
+                  alt="상세이미지"
+                />
+              </Styles.ImageBox>
             )
           }
           if (item.type === HEADING2) {
