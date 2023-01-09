@@ -25,7 +25,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
       props: { contents },
     }
   } catch (error) {
-    console.error(error)
-    return { notFound: true }
+    throw error
   }
 }
