@@ -7,9 +7,5 @@ export const apiService = async () => {
       'content-type': 'application/json',
       'accept-language': 'ko',
     },
-    proxy: {
-      host: `${process.env.NEXT_PUBLIC_DEV_HOST}`,
-      port: 443,
-    },
   })
 }
