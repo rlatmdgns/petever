@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 45px;
-  max-width: 1200px;
-  justify-content: center;
+  margin: -40px -28px 0;
+`
+export const Item = styled.li`
+  margin: 40px 24px 0;
 `
