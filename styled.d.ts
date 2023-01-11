@@ -17,6 +17,6 @@ declare module 'styled-components' {
       30: any
     }
     fontWeights: { REGULAR: number; SEMI_BOLD: number; BOLD: number }
-    viewSizes: { MB: string; PC: string }
+    viewSizes: { MB: string; TB: string; PC: string }
   }
 }

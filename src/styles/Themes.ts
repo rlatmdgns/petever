@@ -44,7 +44,8 @@ const fontWeights = {
 }
 
 const viewSizes = {
-  MB: '@media only screen and (max-width: 1199px)',
+  MB: '@media only screen and (min-width: 320px)',
+  TB: '@media only screen and (min-width: 721px)',
   PC: '@media only screen and (min-width: 1200px)',
 }
 
