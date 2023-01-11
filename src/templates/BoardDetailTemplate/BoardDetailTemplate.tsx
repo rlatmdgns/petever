@@ -3,24 +3,24 @@ import * as Styles from './styles'
 import Image from 'next/image'
 import BreakLine from '@/components/atom/BreakLine'
 
-interface ContentTemplateProps {
-  content: any
+interface BoardDetailTemplateProps {
+  boards: any
 }
 
 const IMAGE_TYPE = 'image'
 const HEADING2 = 'heading_2'
 
-const BoardDetailTemplate = ({ content }: ContentTemplateProps) => {
-  if (!content) return null
+const BoardDetailTemplate = ({ boards }: BoardDetailTemplateProps) => {
+  if (!boards) return null
 
-  const { title } = content?.title
-  const { contents } = content
+  const { title } = boards?.title
+  const { board_blocks } = boards
 
-  const firstImage = contents?.find(
+  const firstImage = board_blocks?.find(
     (content: any) => content.type === IMAGE_TYPE
   )?.contents
 
-  if (!content) return null
+  if (!boards) return null
 
   return (
     <Styles.Wrapper>
@@ -28,7 +28,7 @@ const BoardDetailTemplate = ({ content }: ContentTemplateProps) => {
         <Styles.Title>{title}</Styles.Title>
       </Styles.Banner>
       <Styles.Content>
-        {contents.map((item: any, index: number) => {
+        {board_blocks.map((item: any, index: number) => {
           if (item.type === IMAGE_TYPE) {
             return (
               <Styles.ImageBox key={`content_${index}`}>

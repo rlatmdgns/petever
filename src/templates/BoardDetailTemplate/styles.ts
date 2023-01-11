@@ -1,15 +1,23 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { IMAGES } from '@/constants'
 
 export const Wrapper = styled.div``
 
-export const Banner = styled.div<{ image: string }>`
+export const Banner = styled.div<{ image?: string }>`
   position: relative;
   height: 350px;
-  background: url(${({ image }) =>
-      `${process.env.NEXT_PUBLIC_DEV_HOST}${image}`})
-    no-repeat fixed 50% 0;
-  background-size: cover;
 
+  ${(props) =>
+    props.image
+      ? css`
+          background: url(${process.env.NEXT_PUBLIC_DEV_HOST}${props.image})
+            no-repeat fixed 50% 0;
+          background-size: cover;
+        `
+      : css`
+          background: url(${IMAGES.DEFAULT_BANNER}) fixed no-repeat center 50px,
+            linear-gradient(135.77deg, #6ca3fe 16.03%, #e7fe65 103.21%);
+        `}
   &:after {
     display: block;
     content: '';
@@ -48,7 +56,7 @@ export const Content = styled.div`
 
 export const ImageBox = styled.div`
   position: relative;
-  
+
   & .autoImage {
     display: block;
     position: relative !important;
