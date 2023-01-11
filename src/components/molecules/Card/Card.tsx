@@ -1,6 +1,5 @@
 import React from 'react'
 import * as Styles from './style'
-import dayjs from 'dayjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PAGE } from '@/constants'
@@ -11,15 +10,15 @@ interface CardProps {
 }
 
 const Card = ({ board }: CardProps) => {
+  const createDate = new Date(board.created).toLocaleDateString()
+  
   return (
     <Styles.Wrapper>
       <Link href={PAGE.BOARD(board.uid)}>
         <Styles.Header>
           <Styles.Info>
             <Styles.Tag>{board?.main_category}</Styles.Tag>
-            <Styles.Date>
-              {dayjs(board.created).format('YYYY.MM.DD')}
-            </Styles.Date>
+            <Styles.Date>{createDate}</Styles.Date>
           </Styles.Info>
           <Styles.Title>{board?.title}</Styles.Title>
         </Styles.Header>

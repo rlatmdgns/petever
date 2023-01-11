@@ -21,7 +21,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     const { params: { boardsId } = {} } = ctx
 
     const boards = await getBoard(boardsId as string)
-    console.log(boards)
+
     return {
       props: {
         boards,

@@ -4,11 +4,7 @@ const nextConfig = {
   swcMinify: true,
   compiler: {
     // ssr and displayName are configured by default
-    styledComponents: {
-      ssr: true,
-      displayName: true,
-      pure: true,
-    },
+    styledComponents: true,
   },
   images: {
     domains: ['api.petever.pet'],
