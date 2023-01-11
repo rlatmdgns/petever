@@ -12,6 +12,11 @@ const BoardDetailPage = ({ boards }: BoardDetailPageProps) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  ctx.res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  )
+
   try {
     const { params: { boardsId } = {} } = ctx
 
