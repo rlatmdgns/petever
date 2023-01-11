@@ -1,7 +1,8 @@
 import React from 'react'
-import { GetServerSideProps } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { getBoard } from '@/service/getBoard'
 import BoardDetailTemplate from '@/templates/BoardDetailTemplate'
+import { getBoards } from '@/service/getBoards'
 
 interface BoardDetailPageProps {
   boards: any
@@ -10,26 +11,33 @@ interface BoardDetailPageProps {
 const BoardDetailPage = ({ boards }: BoardDetailPageProps) => {
   return <BoardDetailTemplate boards={boards} />
 }
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  ctx.res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
-  )
-
+// noinspection JSUnusedGlobalSymbols
+export const getStaticProps: GetStaticProps = async (ctx) => {
   try {
     const { params: { boardsId } = {} } = ctx
-
     const boards = await getBoard(boardsId as string)
 
     return {
       props: {
-        boards,
+        boards: boards,
       },
+      revalidate: 10,
     }
   } catch (err) {
+    console.error(err)
     return { notFound: true }
   }
+}
+
+// noinspection JSUnusedGlobalSymbols
+export const getStaticPaths: GetStaticPaths = async () => {
+  const boards = await getBoards()
+
+  const paths = boards.map((board) => ({
+    params: { boardsId: board.uid },
+  }))
+
+  return { paths, fallback: 'blocking' }
 }
 
 export default BoardDetailPage
