@@ -6,6 +6,12 @@ export const Wrapper = styled.div`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   background: #fff;
+
+  &:hover {
+    transition: all 0.3s ease;
+    transform: translateY(-5px);
+    box-shadow: 4px 12px 20px 6px rgb(0 0 0 / 18%);
+  }
 `
 export const Header = styled.div`
   padding: 30px;

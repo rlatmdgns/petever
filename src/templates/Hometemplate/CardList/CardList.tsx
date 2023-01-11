@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import * as Styles from './styles'
 import Card from '@/components/molecules/Card'
 import { Content } from '@/service/getContents/contents.type'
@@ -11,10 +11,12 @@ const CardList = ({ contents }: CardListProps) => {
   return (
     <Styles.Wrapper>
       {contents?.map((content) => (
-        <Card key={content.uid} content={content} />
+        <Styles.Item>
+          <Card key={content.uid} content={content} />
+        </Styles.Item>
       ))}
     </Styles.Wrapper>
   )
 }
 
-export default CardList
+export default memo(CardList)
