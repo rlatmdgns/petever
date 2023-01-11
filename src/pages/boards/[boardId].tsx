@@ -1,20 +1,20 @@
 import React from 'react'
 import { GetServerSideProps } from 'next'
-import { getContent } from '@/service/getContent'
-import ContentDetailTemplate from '@/templates/ContentDetailTemplate'
+import { getBoard } from '@/service/getBoard'
+import BoardDetailTemplate from '@/templates/BoardDetailTemplate'
 
-interface ContentPageProps {
+interface BoardDetailPageProps {
   content: any
 }
 
-const ContentPage = ({ content }: ContentPageProps) => {
-  return <ContentDetailTemplate content={content} />
+const BoardDetailPage = ({ content }: BoardDetailPageProps) => {
+  return <BoardDetailTemplate content={content} />
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   try {
     const { params: { contentId } = {} } = ctx
-    const content = await getContent(contentId as string)
+    const content = await getBoard(contentId as string)
 
     return {
       props: {
@@ -27,4 +27,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 }
 
-export default ContentPage
+export default BoardDetailPage

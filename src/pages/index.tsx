@@ -1,14 +1,14 @@
 import HomeTemplate from '@/templates/Hometemplate'
 import { GetServerSideProps } from 'next'
-import { getContents } from '@/service/getContents'
-import { Content } from '@/service/getContents/contents.type'
+import { Board } from '@/service/getBoards/boards.type'
+import { getBoards } from '@/service/getBoards/getBoards'
 
 interface HomePageProps {
-  contents: Content[]
+  boards: Board[]
 }
 
-export default function Home({ contents }: HomePageProps) {
-  return <HomeTemplate contents={contents} />
+export default function Home({ boards }: HomePageProps) {
+  return <HomeTemplate initialData={boards} />
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
@@ -17,16 +17,16 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     'public, s-maxage=10, stale-while-revalidate=59'
   )
   try {
-    const contents = await getContents()
+    const boards = await getBoards()
 
-    if (!contents) {
+    if (!boards) {
       return {
         props: {},
       }
     }
 
     return {
-      props: { contents },
+      props: { boards },
     }
   } catch (error) {
     throw error

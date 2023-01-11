@@ -8,7 +8,7 @@ const MainHeader = () => {
   const menus = [
     {
       label: 'Contents',
-      path: PAGE.CONTENTS,
+      path: PAGE.BOARD,
     },
     {
       label: 'Community',

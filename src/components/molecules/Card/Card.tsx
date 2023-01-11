@@ -4,32 +4,32 @@ import dayjs from 'dayjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PAGE } from '@/constants'
-import { Content } from '@/service/getContents/contents.type'
+import { Board } from '@/service/getBoards/boards.type'
 
 interface CardProps {
-  content: Content
+  board: Board
 }
 
-const Card = ({ content }: CardProps) => {
+const Card = ({ board }: CardProps) => {
   return (
     <Styles.Wrapper>
-      <Link href={PAGE.CONTENT(content.uid)}>
+      <Link href={PAGE.BOARD(board.uid)}>
         <Styles.Header>
           <Styles.Info>
-            <Styles.Tag>{content?.main_category}</Styles.Tag>
+            <Styles.Tag>{board?.main_category}</Styles.Tag>
             <Styles.Date>
-              {dayjs(content.created).format('YYYY.MM.DD')}
+              {dayjs(board.created).format('YYYY.MM.DD')}
             </Styles.Date>
           </Styles.Info>
-          <Styles.Title>{content?.title}</Styles.Title>
+          <Styles.Title>{board?.title}</Styles.Title>
         </Styles.Header>
         <Styles.ImageBox>
-          {content?.image && (
+          {board?.image && (
             <Image
-              src={`${process.env.NEXT_PUBLIC_DEV_HOST}${content?.image}`}
+              src={`${process.env.NEXT_PUBLIC_DEV_HOST}${board?.image}`}
               width={370}
               height={350}
-              alt={content?.title}
+              alt={board?.title}
             />
           )}
         </Styles.ImageBox>

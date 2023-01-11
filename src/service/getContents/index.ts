@@ -1,1 +1,0 @@
-export { getContents } from './getContents'

@@ -1,6 +1,6 @@
 export const PAGE = {
   HOME: '/',
-  CONTENTS: '/contents',
-  CONTENT: (contentId: string) => `/contents/${contentId}`,
+  BOARDS: '/boards',
+  BOARD: (boardId: string) => `/board/${boardId}`,
   COMMUNITY: '/community',
 }

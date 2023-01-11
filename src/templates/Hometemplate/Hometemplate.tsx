@@ -1,16 +1,16 @@
 import React from 'react'
 import * as Styles from './styles'
 import CardList from '@/templates/Hometemplate/CardList'
-import { Content } from '@/service/getContents/contents.type'
+import { Board } from '@/service/getBoards/boards.type'
 
 interface HomeTemplateProps {
-  contents: Content[]
+  initialData: Board[]
 }
 
-const HomeTemplate = ({ contents }: HomeTemplateProps) => {
+const HomeTemplate = ({ initialData }: HomeTemplateProps) => {
   return (
     <Styles.Wrapper>
-      <CardList contents={contents} />
+      <CardList boards={initialData} />
     </Styles.Wrapper>
   )
 }

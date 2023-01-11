@@ -1,5 +1,5 @@
 import React from 'react'
-import * as Styles from '@/templates/ContentDetailTemplate/styles'
+import * as Styles from './styles'
 import Image from 'next/image'
 import BreakLine from '@/components/atom/BreakLine'
 
@@ -10,7 +10,7 @@ interface ContentTemplateProps {
 const IMAGE_TYPE = 'image'
 const HEADING2 = 'heading_2'
 
-const ContentDetailTemplate = ({ content }: ContentTemplateProps) => {
+const BoardDetailTemplate = ({ content }: ContentTemplateProps) => {
   if (!content) return null
 
   const { title } = content?.title
@@ -56,4 +56,4 @@ const ContentDetailTemplate = ({ content }: ContentTemplateProps) => {
   )
 }
 
-export default ContentDetailTemplate
+export default BoardDetailTemplate

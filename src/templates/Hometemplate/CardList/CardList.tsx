@@ -1,18 +1,18 @@
 import React, { memo } from 'react'
 import * as Styles from './styles'
 import Card from '@/components/molecules/Card'
-import { Content } from '@/service/getContents/contents.type'
+import { Board } from '@/service/getBoards/boards.type'
 
 interface CardListProps {
-  contents: Content[]
+  boards: Board[]
 }
 
-const CardList = ({ contents }: CardListProps) => {
+const CardList = ({ boards }: CardListProps) => {
   return (
     <Styles.Wrapper>
-      {contents?.map((content) => (
-        <Styles.Item key={content.uid}>
-          <Card content={content} />
+      {boards?.map((board) => (
+        <Styles.Item key={board.uid}>
+          <Card board={board} />
         </Styles.Item>
       ))}
     </Styles.Wrapper>

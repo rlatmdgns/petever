@@ -1,0 +1,1 @@
+export { getBoards } from './getBoards'

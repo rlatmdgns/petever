@@ -1,4 +1,4 @@
-export interface Content {
+export interface Board {
   created: string
   creator: string
   edited: string
