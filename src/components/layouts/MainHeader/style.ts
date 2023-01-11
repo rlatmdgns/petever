@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.header`
-  ${(props) => props.theme.viewSizes.MB} {
-    padding: 0 20px;
-  }
+  padding: 0 20px;
 `
 export const Inner = styled.div`
   display: flex;
