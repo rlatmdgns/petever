@@ -11,8 +11,8 @@ const CardList = ({ contents }: CardListProps) => {
   return (
     <Styles.Wrapper>
       {contents?.map((content) => (
-        <Styles.Item>
-          <Card key={content.uid} content={content} />
+        <Styles.Item key={content.uid}>
+          <Card content={content} />
         </Styles.Item>
       ))}
     </Styles.Wrapper>
