@@ -30,6 +30,11 @@ const fonts = {
     font-size: 22px;
     letter-spacing: -0.02em;
   `,
+  24: css`
+    font-size: 24px;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+  `,
   30: css`
     font-size: 30px;
     line-height: 44px;

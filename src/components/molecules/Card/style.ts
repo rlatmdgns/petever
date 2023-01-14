@@ -52,4 +52,8 @@ export const ImageBox = styled.div`
   width: 100%;
   height: 350px;
   background: ${(props) => props.theme.colors.GRAY};
+
+  img {
+    object-fit: cover;
+  }
 `

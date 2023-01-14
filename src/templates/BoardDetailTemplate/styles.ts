@@ -30,20 +30,30 @@ export const Banner = styled.div<{ image?: string }>`
     opacity: 0.7;
   }
 `
-export const Title = styled.p`
+export const BannerTitleWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   display: flex;
+  flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
   color: #fff;
   z-index: 10;
+`
+
+export const BannerTitle = styled.h2`
   ${(props) => props.theme.fonts[30]};
+`
+
+export const Date = styled.div`
+  margin-top: 20px;
+  ${(props) => props.theme.fonts[16]};
+  color: ${(props) => props.theme.colors.GRAY};
 `
 
 export const Content = styled.div`
@@ -56,6 +66,7 @@ export const Content = styled.div`
 
 export const ImageBox = styled.div`
   position: relative;
+  padding: 20px 0;
 
   & .autoImage {
     display: block;
@@ -64,8 +75,13 @@ export const ImageBox = styled.div`
   }
 `
 
-export const SubTitle = styled.p`
-  padding: 4px 0;
-  ${(props) => props.theme.fonts[22]};
+export const Title = styled.h3`
+  padding: 0 10px;
+  ${(props) => props.theme.fonts[24]};
   font-weight: ${(props) => props.theme.fontWeights.BOLD};
+  color: ${(props) => props.theme.colors.BLACK};
+`
+export const Text = styled.p`
+  padding: 0 10px;
+  line-height: 29px;
 `
