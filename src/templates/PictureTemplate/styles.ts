@@ -18,5 +18,7 @@ export const ImageBox = styled.div`
     position: relative !important;
     width: 100%;
     height: auto !important;
+    max-height: 600px;
+    object-fit: contain;
   }
 `
