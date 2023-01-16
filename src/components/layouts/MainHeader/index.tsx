@@ -6,20 +6,20 @@ import Link from 'next/link'
 
 const MainHeader = () => {
   // const { data: categories } = useQuery([QUERY_KEY.CATEGORY], getCategory)
-  const menus = [
-    // {
-    //   label: 'Contents',
-    //   path: PAGE.BOARD,
-    // },
-    // {
-    //   label: 'Community',
-    //   path: PAGE.COMMUNITY,
-    // },
-    {
-      label: '로그인',
-      path: PAGE.SIGN_IN,
-    },
-  ]
+  // const menus = [
+  //   {
+  //     label: 'Contents',
+  //     path: PAGE.BOARD,
+  //   },
+  //   {
+  //     label: 'Community',
+  //     path: PAGE.COMMUNITY,
+  //   },
+  //   {
+  //     label: '로그인',
+  //     path: PAGE.SIGN_IN,
+  //   },
+  // ]
   return (
     <Styles.Wrapper>
       <Styles.Inner>
