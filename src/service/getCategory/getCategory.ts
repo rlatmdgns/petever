@@ -1,11 +1,11 @@
 import { apiService } from '@/core/apiService'
 import { API_URL } from '@/core/apiUrl'
-import { Board } from '@/service/getBoard/board.type'
+import { Category } from '@/service/getCategory/category.type'
 
-export const getBoard = async (boardId: string): Promise<Board> => {
+export const getCategory = async (): Promise<Category[]> => {
   try {
     const api = await apiService()
-    const { data } = await api.get(API_URL.GET_BOARD(boardId))
+    const { data } = await api.get(API_URL.GET_CATEGORY)
     return data
   } catch (error) {
     throw error

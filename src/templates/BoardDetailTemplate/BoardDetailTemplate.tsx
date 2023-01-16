@@ -1,24 +1,25 @@
 import React from 'react'
 import * as Styles from './styles'
 import Image from 'next/image'
-import BreakLine from '@/components/atom/BreakLine'
 import { NextSeo } from 'next-seo'
+import { Board } from '@/service/getBoard/board.type'
+import BreakLine from '@/components/atom/BreakLine'
 import dayjs from 'dayjs'
 
 interface BoardDetailTemplateProps {
-  boards: any
+  boards: Board
 }
 
 const IMAGE_TYPE = 'image'
 const HEADING2 = 'heading_2'
 
 const BoardDetailTemplate = ({ boards }: BoardDetailTemplateProps) => {
-  if (!boards) return null
-  const { title } = boards?.title
+  const { title, created } = boards?.title
   const { board_blocks } = boards
+  const createdDate = dayjs(created).format('YYYY. MM. DD.')
 
   const firstImage = board_blocks?.find(
-    (content: any) => content.type === IMAGE_TYPE
+    (content) => content.type === IMAGE_TYPE
   )?.contents
 
   if (!boards) return null
@@ -35,13 +36,11 @@ const BoardDetailTemplate = ({ boards }: BoardDetailTemplateProps) => {
       <Styles.Banner image={firstImage}>
         <Styles.BannerTitleWrapper>
           <Styles.BannerTitle>{title}</Styles.BannerTitle>
-          <Styles.Date>
-            {dayjs(title.created).format('YYYY. MM. DD.')}
-          </Styles.Date>
+          <Styles.Date>{createdDate}</Styles.Date>
         </Styles.BannerTitleWrapper>
       </Styles.Banner>
       <Styles.Content>
-        {board_blocks.map((item: any, index: number) => {
+        {board_blocks.map((item, index: number) => {
           if (item.type === IMAGE_TYPE) {
             return (
               <Styles.ImageBox key={`content_${index}`}>
@@ -63,8 +62,8 @@ const BoardDetailTemplate = ({ boards }: BoardDetailTemplateProps) => {
             )
           }
           return (
-            <Styles.Text>
-              <BreakLine key={`content_${index}`} text={item.contents} />
+            <Styles.Text key={`content_${index}`}>
+              <BreakLine text={item.contents} />
             </Styles.Text>
           )
         })}
