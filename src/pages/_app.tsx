@@ -7,6 +7,7 @@ import Themes from '@/styles/Themes'
 import { ThemeProvider } from 'styled-components'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { DefaultSeo } from 'next-seo'
+import { Analytics } from '@vercel/analytics/react'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -44,6 +45,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <>
+      <Analytics />
       <DefaultSeo {...DEFAULT_SEO} />
       <ThemeProvider theme={Themes}>
         <GlobalStyles />
