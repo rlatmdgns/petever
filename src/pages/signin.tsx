@@ -1,15 +1,22 @@
 import React from 'react'
-import { signIn } from '@/service/signIn'
+import { useRouter } from 'next/router'
+import { API_URL } from '@/core/apiUrl'
 
 const SignInPage = () => {
-  const handleSignIn = async () => {
-    const result = await signIn()
-    console.log(result)
+  const router = useRouter()
+  const GOOGLE = 'google'
+  const KAKAO = 'kakao'
+  const handleSNSlogIn = (type: string) => {
+    return router.push(API_URL.SNS_LOGIN(type))
   }
   return (
     <div>
-      <button type="button" onClick={handleSignIn}>
-        로그인
+      <button type="button" onClick={() => handleSNSlogIn(GOOGLE)}>
+        구글 로그인
+      </button>
+
+      <button type="button" onClick={() => handleSNSlogIn(KAKAO)}>
+        카카오 로그인
       </button>
     </div>
   )
