@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  max-width: 480px;
-  margin: 0 auto;
+  height: 600px;
+  background: #7f7f7f;
 `

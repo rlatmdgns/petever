@@ -1,4 +1,5 @@
 const IMAGE_PATH = '/images'
+const ICON_PATH = '/icons'
 
 export const IMAGES = {
   LOGO: `${IMAGE_PATH}/logo.svg`,
@@ -8,3 +9,6 @@ export const IMAGES = {
 /**
  * New Design System Icons
  */
+export const ICONS = {
+  MENU: `${ICON_PATH}/icon_hambuger.svg`,
+}

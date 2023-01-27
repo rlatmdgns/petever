@@ -5,6 +5,7 @@ import { DefaultTheme } from 'styled-components'
  * Color System
  */
 const colors = {
+  WHITE: '#fff',
   BLACK: '#222',
   GREEN: '#00C381',
   RED: '#FF5151',
