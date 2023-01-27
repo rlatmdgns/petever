@@ -1,26 +1,29 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.header`
-  padding: 0 20px;
-`
-export const Inner = styled.div`
+export const Wrapper = styled.header<{ isScroll: boolean }>`
+  position: sticky;
+  width: 100%;
+  max-width: 480px;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
-  height: 50px;
-  margin: 0 auto;
+  padding: 0 20px;
+  height: 60px;
+  background: ${(props) =>
+    props.isScroll ? props.theme.colors.BLACK : 'transparent'};
+  z-index: 100;
+  border-bottom: 0.5px solid ${(props) => props.theme.colors.WHITE};
+
+  ${(props) => props.theme.viewSizes.PC} {
+    max-width: 480px;
+    left: calc(50vw);
+  }
 `
+
 export const Logo = styled.h1``
 
-export const Nav = styled.nav`
-  a {
-    ${(props) => props.theme.fonts[14]};
-    color: ${(props) => props.theme.colors.BLACK};
-    font-weight: ${(props) => props.theme.fontWeights.SEMI_BOLD};
-  }
-
-  a + a {
-    margin-left: 24px;
-  }
+export const MenuButton = styled.button`
+  background: transparent;
+  cursor: pointer;
 `
