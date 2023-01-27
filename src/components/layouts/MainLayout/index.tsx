@@ -17,8 +17,16 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
   return (
     <Styles.Wrapper>
-      <MainHeader />
-      {children}
+      <Styles.Left>
+        <Styles.Title>
+          반려동물 커뮤니티 <br />
+          펫에버
+        </Styles.Title>
+      </Styles.Left>
+      <Styles.Right>
+        <MainHeader />
+        {children}
+      </Styles.Right>
     </Styles.Wrapper>
   )
 }

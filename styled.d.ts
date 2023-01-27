@@ -11,8 +11,11 @@ declare module 'styled-components' {
       GRAY: string
     }
     fonts: {
+      13: any
       14: any
+      15: any
       16: any
+      18: any
       20: any
       22: any
       24: any

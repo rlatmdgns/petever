@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { PAGE } from '@/constants'
 import { Board } from '@/service/getBoards/boards.type'
 import dayjs from 'dayjs'
+import RelativeFigure from '@/components/atom/RelativeFigure'
 
 interface CardProps {
   board: Board
@@ -14,25 +15,21 @@ const Card = ({ board }: CardProps) => {
   return (
     <Styles.Wrapper>
       <Link href={PAGE.BOARD(board.uid)}>
-        <Styles.Header>
-          <Styles.Info>
-            <Styles.Tag>{board?.main_category}</Styles.Tag>
-            <Styles.Date>
-              {dayjs(board.created).format('YYYY. MM. DD.')}
-            </Styles.Date>
-          </Styles.Info>
-          <Styles.Title>{board?.title}</Styles.Title>
-        </Styles.Header>
-        <Styles.ImageBox>
-          {board?.image && (
+        {board?.image && (
+          <RelativeFigure $width={160} $height={160}>
             <Image
               src={`${process.env.NEXT_PUBLIC_DEV_HOST}${board?.image}`}
-              width={370}
-              height={350}
+              fill
+              sizes="(max-width: 480px) 50vw, 240px"
               alt={board?.title}
             />
-          )}
-        </Styles.ImageBox>
+          </RelativeFigure>
+        )}
+        <Styles.Tag>{board?.main_category}</Styles.Tag>
+        <Styles.Title>{board?.title}</Styles.Title>
+        <Styles.Date>
+          {dayjs(board.created).format('YYYY. MM. DD.')}
+        </Styles.Date>
       </Link>
     </Styles.Wrapper>
   )

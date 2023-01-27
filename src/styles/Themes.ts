@@ -6,7 +6,7 @@ import { DefaultTheme } from 'styled-components'
  */
 const colors = {
   WHITE: '#fff',
-  BLACK: '#222',
+  BLACK: '#333',
   GREEN: '#00C381',
   RED: '#FF5151',
   BLUE: '#7790DB',
@@ -14,13 +14,27 @@ const colors = {
 }
 
 const fonts = {
+  13: css`
+    font-size: 13px;
+    letter-spacing: -0.02em;
+  `,
   14: css`
     font-size: 14px;
     letter-spacing: -0.01em;
   `,
+  15: css`
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.02em;
+  `,
   16: css`
     font-size: 16px;
     letter-spacing: -0.01em;
+  `,
+  18: css`
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.02em;
   `,
   20: css`
     font-size: 20px;
