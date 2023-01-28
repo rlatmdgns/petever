@@ -33,7 +33,11 @@ const MainHeader = () => {
   //   },
   // ]
   return (
-    <Styles.Wrapper isScroll={isScroll}>
+    <Styles.Wrapper
+      className={isScroll ? 'scroll-down' : 'scroll-top'}
+      data-testid="header"
+      isScroll={isScroll}
+    >
       <Styles.Logo>
         <Link href={PAGE.HOME}>
           <Image src={IMAGES.LOGO} alt="펫에버" width={28} height={22} />
