@@ -1,4 +1,4 @@
-import { apiService } from '@/core/apiService'
+import { apiService } from '@/core/apiClient'
 import { API_URL } from '@/core/apiUrl'
 import { Board } from '@/service/getBoard/board.type'
 
