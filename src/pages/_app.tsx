@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { DefaultSeo } from 'next-seo'
 import { Analytics } from '@vercel/analytics/react'
+import { IMAGES } from '@/constants'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -25,7 +26,15 @@ const DEFAULT_SEO = {
     locale: 'ko_KR',
     title: '펫에버',
     description:
-      'You are by my side, I am by your side.\n 언제나 곁을 지킬 수 있도록 펫에버가 도와드릴게요.',
+      '언제나 곁을 지킬 수 있도록 펫에버가 도와드릴게요.\n You are by my side, I am by your side.',
+    images: [
+      {
+        url: IMAGES.META,
+        width: 800,
+        height: 400,
+        alt: 'Petever',
+      },
+    ],
   },
 }
 
