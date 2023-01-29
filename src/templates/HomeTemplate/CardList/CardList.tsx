@@ -18,8 +18,8 @@ const CardList = ({ boards }: CardListProps) => {
     <Styles.Wrapper>
       <Styles.Title>
         <Image
-          src={IMAGES.PETEVER_MEGAGINE}
-          alt="PETEVER MEGAGINE"
+          src={IMAGES.PETEVER_MAGAZINE}
+          alt="PETEVER_MAGAZINE"
           width={193}
           height={72}
         />
