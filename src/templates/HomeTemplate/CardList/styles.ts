@@ -9,7 +9,7 @@ export const Title = styled.p`
   z-index: 10;
   font-size: 36px;
   line-height: 36px;
-  margin: 60px 0 -20px;
+  margin: 60px 0 -20px 15px;
 `
 export const List = styled.div`
   margin-top: 30px;
