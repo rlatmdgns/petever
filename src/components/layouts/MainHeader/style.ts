@@ -10,10 +10,10 @@ export const Wrapper = styled.header<{ isScroll: boolean }>`
   justify-content: space-between;
   padding: 0 20px;
   height: 60px;
-  background: ${(props) =>
-    props.isScroll ? props.theme.colors.BLACK : 'transparent'};
+  background: ${(props) => (props.isScroll ? '#000' : 'transparent')};
   z-index: 100;
-  border-bottom: 0.5px solid ${(props) => props.theme.colors.WHITE};
+  border-bottom: 0.5px solid
+    ${(props) => (props.isScroll ? '#000' : props.theme.colors.WHITE)};
 
   ${(props) => props.theme.viewSizes.PC} {
     max-width: 480px;
