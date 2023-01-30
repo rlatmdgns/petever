@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import { API_URL } from '@/core/apiUrl'
-import { logout } from '@/service/logout/getBoard'
+import { logout } from '@/service/logout'
 
 const LoginPage = () => {
   const router = useRouter()
