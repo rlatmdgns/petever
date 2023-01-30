@@ -1,1 +1,1 @@
-export { getBoard } from './getBoard'
+export { logout } from './logout'
