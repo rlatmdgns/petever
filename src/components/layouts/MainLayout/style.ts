@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  margin-top: -60px;
-
   ${(props) => props.theme.viewSizes.MB} {
     display: flex;
     justify-content: center;
