@@ -11,7 +11,7 @@ describe('Card', () => {
       creator: '김승훈',
       edited: '김승훈',
       title: '테스트 테스트',
-      image: '/images/default-banner.png',
+      image: 'https://petever.pet/images/default-banner.png',
       uid: '12312321313',
       main_category: '반려동물',
     }
