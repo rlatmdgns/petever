@@ -7,3 +7,5 @@ export const apiClient = axios.create({
     'accept-language': 'ko',
   },
 })
+
+apiClient.defaults.withCredentials = true
