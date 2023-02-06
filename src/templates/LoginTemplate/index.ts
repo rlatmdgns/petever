@@ -1,1 +1,1 @@
-export { default } from './SignInTemplate'
+export { default } from './LoginTemplate'
