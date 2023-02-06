@@ -14,7 +14,6 @@ const IMAGE_TYPE = 'image'
 const HEADING2 = 'heading_2'
 
 const BoardDetailTemplate = ({ boards }: BoardDetailTemplateProps) => {
-  console.log(boards)
   const { title, created } = boards?.title
   const { board_blocks } = boards
   const createdDate = dayjs(created).format('YYYY. MM. DD.')

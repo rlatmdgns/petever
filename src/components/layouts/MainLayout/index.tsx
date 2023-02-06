@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react'
 import * as Styles from './style'
 import { useRouter } from 'next/router'
-import MainHeader from '@/components/layouts/MainHeader'
+import Image from 'next/image'
+import { IMAGES } from '@/constants'
 
 interface MainLayoutProps {
   children: ReactNode
@@ -19,14 +20,15 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     <Styles.Wrapper>
       <Styles.Left>
         <Styles.Title>
-          반려동물 커뮤니티 <br />
-          펫에버
+          <Image
+            src={IMAGES.MAIN_LEFT}
+            alt="반려동물 커뮤니티 펫에버"
+            width={769}
+            height={616}
+          />
         </Styles.Title>
       </Styles.Left>
-      <Styles.Right>
-        <MainHeader />
-        {children}
-      </Styles.Right>
+      <Styles.Right>{children}</Styles.Right>
     </Styles.Wrapper>
   )
 }

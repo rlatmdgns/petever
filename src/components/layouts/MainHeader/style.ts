@@ -1,24 +1,24 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.header<{ isScroll: boolean }>`
+export const Wrapper = styled.header<{ isScroll: boolean; isDark?: boolean }>`
   position: sticky;
-  width: 100%;
-  max-width: 480px;
   top: 0;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  width: 100%;
+  max-width: 480px;
   height: 60px;
-  background: ${(props) => (props.isScroll ? '#000' : 'transparent')};
+  padding: 0 20px;
+  margin: 0 auto;
+  background: ${(props) => {
+    if (props.isScroll || props.isDark) return '#000'
+    return 'transparent'
+  }};
   z-index: 100;
   border-bottom: 0.5px solid
     ${(props) => (props.isScroll ? '#000' : props.theme.colors.WHITE)};
-
-  ${(props) => props.theme.viewSizes.PC} {
-    max-width: 480px;
-    left: calc(50vw);
-  }
 `
 
 export const Logo = styled.h1``

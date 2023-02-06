@@ -4,7 +4,12 @@ import { ICONS, IMAGES, PAGE } from '@/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const MainHeader = () => {
+interface MainHeaderProps {
+  isDark?: boolean
+}
+
+const MainHeader = ({ isDark }: MainHeaderProps) => {
+  console.log(isDark)
   const [isScroll, setIsScroll] = useState(false)
   const handleScroll = () => {
     const active = window.scrollY > 0
@@ -33,7 +38,7 @@ const MainHeader = () => {
   //   },
   // ]
   return (
-    <Styles.Wrapper isScroll={isScroll}>
+    <Styles.Wrapper isScroll={isScroll} isDark={isDark}>
       <Styles.Logo>
         <Link href={PAGE.HOME}>
           <Image src={IMAGES.LOGO} alt="펫에버" width={28} height={22} />

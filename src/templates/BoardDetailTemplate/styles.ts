@@ -6,6 +6,7 @@ export const Wrapper = styled.div``
 export const Banner = styled.div<{ image?: string }>`
   position: relative;
   height: 350px;
+  text-align: center;
 
   ${(props) =>
     props.image
@@ -15,7 +16,7 @@ export const Banner = styled.div<{ image?: string }>`
           background-size: cover;
         `
       : css`
-          background: url(${IMAGES.DEFAULT_BANNER}) fixed no-repeat center 50px,
+          background: url(${IMAGES.DEFAULT_BANNER}) no-repeat 50% 50%,
             linear-gradient(135.77deg, #6ca3fe 16.03%, #e7fe65 103.21%);
         `}
   &:after {
