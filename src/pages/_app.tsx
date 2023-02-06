@@ -17,6 +17,7 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
+
 const DEFAULT_SEO = {
   title: '펫에버 - 반려동물 지식 정보 커뮤니티',
   description:
@@ -50,6 +51,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       },
     },
   })
+
   const getLayout = Component?.getLayout ?? ((page) => page)
 
   return (
