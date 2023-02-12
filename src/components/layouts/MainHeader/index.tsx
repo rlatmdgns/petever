@@ -9,7 +9,6 @@ interface MainHeaderProps {
 }
 
 const MainHeader = ({ isDark }: MainHeaderProps) => {
-  console.log(isDark)
   const [isScroll, setIsScroll] = useState(false)
   const handleScroll = () => {
     const active = window.scrollY > 0
