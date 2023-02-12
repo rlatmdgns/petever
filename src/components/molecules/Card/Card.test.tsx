@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
 import Card from '@/components/molecules/Card/Card'
 import { ThemeProvider } from 'styled-components'
 import Themes from '@/styles/Themes'

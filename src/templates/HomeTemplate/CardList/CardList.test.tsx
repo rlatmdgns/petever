@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
 import CardList from '@/templates/HomeTemplate/CardList/CardList'
 import { ThemeProvider } from 'styled-components'
 import Themes from '@/styles/Themes'
