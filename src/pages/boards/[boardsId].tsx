@@ -11,6 +11,7 @@ interface BoardDetailPageProps {
 const BoardDetailPage = ({ boards }: BoardDetailPageProps) => {
   return <BoardDetailTemplate boards={boards} />
 }
+
 // noinspection JSUnusedGlobalSymbols
 export const getStaticProps: GetStaticProps = async (ctx) => {
   try {
@@ -21,7 +22,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       props: {
         boards: boards,
       },
-      revalidate: 10,
+      revalidate: 60,
     }
   } catch (err) {
     console.error(err)

@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react'
-import Card from '@/components/molecules/Card/Card'
+import CardList from '@/templates/HomeTemplate/CardList/CardList'
 import { ThemeProvider } from 'styled-components'
 import Themes from '@/styles/Themes'
 
-describe('Card', () => {
-  test('renders Card', () => {
-    const board = {
+describe('<CardList />', () => {
+  const sampleBoards = [
+    {
       created: '2022. 12. 12.',
       creator: '김승훈',
       edited: '김승훈',
@@ -13,16 +13,15 @@ describe('Card', () => {
       image: 'https://petever.pet/images/default-banner.png',
       uid: '12312321313',
       main_category: '반려동물',
-    }
+    },
+  ]
 
+  test('renders CardList', () => {
     render(
       <ThemeProvider theme={Themes}>
-        <Card board={board} />
+        <CardList boards={sampleBoards} />
       </ThemeProvider>
     )
-
-    expect(screen.getByText(board.title)).toBeInTheDocument()
-    expect(screen.getByText(board.main_category)).toBeInTheDocument()
-    expect(screen.getByText(board.created)).toBeInTheDocument()
+    expect(screen.getByText(sampleBoards[0].title)).toBeInTheDocument()
   })
 })
