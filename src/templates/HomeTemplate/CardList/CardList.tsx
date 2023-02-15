@@ -10,10 +10,12 @@ import Link from 'next/link'
 
 interface CardListProps {
   boards: Board[]
+  firstBoard: Board
 }
 
-const CardList = ({ boards }: CardListProps) => {
-  const firstBoard = boards[0]
+const CardList = ({ boards, firstBoard }: CardListProps) => {
+  const createDate = dayjs(firstBoard.created).format('YYYY. MM. DD.')
+
   return (
     <Styles.Wrapper>
       <Styles.Title>
@@ -34,16 +36,12 @@ const CardList = ({ boards }: CardListProps) => {
           />
         </RelativeFigure>
         <Styles.Text>{firstBoard.title}</Styles.Text>
-        <Styles.Date>
-          {dayjs(firstBoard.created).format('YYYY. MM. DD.')}
-        </Styles.Date>
+        <Styles.Date>{createDate}</Styles.Date>
       </Link>
       <Styles.List>
-        {boards
-          ?.filter((board, index) => index !== 0 && board)
-          .map((board) => (
-            <Card key={board.uid} board={board} />
-          ))}
+        {boards.map((board) => (
+          <Card key={board.uid} board={board} />
+        ))}
       </Styles.List>
     </Styles.Wrapper>
   )
