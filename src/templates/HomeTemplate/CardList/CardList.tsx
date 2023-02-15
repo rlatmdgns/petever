@@ -14,6 +14,8 @@ interface CardListProps {
 }
 
 const CardList = ({ boards, firstBoard }: CardListProps) => {
+  const createDate = dayjs(firstBoard.created).format('YYYY. MM. DD.')
+
   return (
     <Styles.Wrapper>
       <Styles.Title>
@@ -34,9 +36,7 @@ const CardList = ({ boards, firstBoard }: CardListProps) => {
           />
         </RelativeFigure>
         <Styles.Text>{firstBoard.title}</Styles.Text>
-        <Styles.Date>
-          {dayjs(firstBoard.created).format('YYYY. MM. DD.')}
-        </Styles.Date>
+        <Styles.Date>{createDate}</Styles.Date>
       </Link>
       <Styles.List>
         {boards.map((board) => (
