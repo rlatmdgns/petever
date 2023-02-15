@@ -10,10 +10,10 @@ import Link from 'next/link'
 
 interface CardListProps {
   boards: Board[]
+  firstBoard: Board
 }
 
-const CardList = ({ boards }: CardListProps) => {
-  const firstBoard = boards[0]
+const CardList = ({ boards, firstBoard }: CardListProps) => {
   return (
     <Styles.Wrapper>
       <Styles.Title>
@@ -39,11 +39,9 @@ const CardList = ({ boards }: CardListProps) => {
         </Styles.Date>
       </Link>
       <Styles.List>
-        {boards
-          ?.filter((board, index) => index !== 0 && board)
-          .map((board) => (
-            <Card key={board.uid} board={board} />
-          ))}
+        {boards.map((board) => (
+          <Card key={board.uid} board={board} />
+        ))}
       </Styles.List>
     </Styles.Wrapper>
   )

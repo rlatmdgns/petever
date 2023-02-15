@@ -5,14 +5,15 @@ import { Board } from '@/service/getBoards/boards.type'
 import Banner from '@/templates/HomeTemplate/Banner'
 
 interface HomeTemplateProps {
-  initialData: Board[]
+  boards: Board[]
+  firstBoard: Board
 }
 
-const HomeTemplate = ({ initialData }: HomeTemplateProps) => {
+const HomeTemplate = ({ boards, firstBoard }: HomeTemplateProps) => {
   return (
     <Styles.Wrapper>
       <Banner />
-      <CardList boards={initialData} />
+      <CardList boards={boards} firstBoard={firstBoard} />
     </Styles.Wrapper>
   )
 }

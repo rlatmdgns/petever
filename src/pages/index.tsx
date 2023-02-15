@@ -6,10 +6,11 @@ import { GetServerSideProps } from 'next'
 
 interface HomePageProps {
   boards: Board[]
+  firstBoard: Board
 }
 
-export default function HomePage({ boards }: HomePageProps) {
-  return <HomeTemplate initialData={boards} />
+export default function HomePage({ boards, firstBoard }: HomePageProps) {
+  return <HomeTemplate boards={boards} firstBoard={firstBoard} />
 }
 
 HomePage.getLayout = function getLayout(page: React.ReactElement) {
@@ -27,16 +28,18 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     'public, s-maxage=10, stale-while-revalidate=59'
   )
   try {
-    const boards = await getBoards()
+    const boardsData = await getBoards()
 
-    if (!boards) {
+    if (!boardsData) {
       return {
         props: {},
       }
     }
+    const boards = boardsData?.filter((board, index) => index !== 0 && board)
+    const firstBoard = boardsData[0]
 
     return {
-      props: { boards },
+      props: { boards, firstBoard },
     }
   } catch (error) {
     throw error

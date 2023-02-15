@@ -12,10 +12,11 @@ interface CardProps {
 }
 
 const Card = ({ board }: CardProps) => {
+  const createdDate = dayjs(board.created).format('YYYY. MM. DD.')
   return (
     <Styles.Wrapper>
       <Link href={PAGE.BOARD(board.uid)}>
-        {board?.image && (
+        {board.image && (
           <RelativeFigure $width={160} $height={160}>
             <Image
               src={`${process.env.NEXT_PUBLIC_DEV_HOST}${board?.image}`}
@@ -27,9 +28,7 @@ const Card = ({ board }: CardProps) => {
         )}
         <Styles.Tag>{board?.main_category}</Styles.Tag>
         <Styles.Title>{board?.title}</Styles.Title>
-        <Styles.Date>
-          {dayjs(board.created).format('YYYY. MM. DD.')}
-        </Styles.Date>
+        <Styles.Date>{createdDate}</Styles.Date>
       </Link>
     </Styles.Wrapper>
   )
