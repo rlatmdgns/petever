@@ -4,14 +4,33 @@ import { ThemeProvider } from 'styled-components'
 import Themes from '@/styles/Themes'
 
 describe('<CardList />', () => {
+  const sampleFirstBoard = {
+    created: '2022. 12. 12.',
+    creator: '김승훈',
+    edited: '김승훈',
+    title: '테스트1',
+    image: 'https://petever.pet/images/default-banner.png',
+    uid: '1',
+    main_category: '반려동물',
+  }
+
   const sampleBoards = [
     {
       created: '2022. 12. 12.',
       creator: '김승훈',
       edited: '김승훈',
-      title: '테스트 테스트',
+      title: '테스트2',
       image: 'https://petever.pet/images/default-banner.png',
-      uid: '12312321313',
+      uid: '2',
+      main_category: '반려동물',
+    },
+    {
+      created: '2022. 12. 12.',
+      creator: '김승훈',
+      edited: '김승훈',
+      title: '테스트3',
+      image: 'https://petever.pet/images/default-banner.png',
+      uid: '3',
       main_category: '반려동물',
     },
   ]
@@ -19,9 +38,10 @@ describe('<CardList />', () => {
   test('renders CardList', () => {
     render(
       <ThemeProvider theme={Themes}>
-        <CardList boards={sampleBoards} />
+        <CardList firstBoard={sampleFirstBoard} boards={sampleBoards} />
       </ThemeProvider>
     )
-    expect(screen.getByText(sampleBoards[0].title)).toBeInTheDocument()
+    
+    expect(screen.getByText(sampleFirstBoard.title)).toBeInTheDocument()
   })
 })
