@@ -23,7 +23,17 @@ export const Wrapper = styled.header<{ isScroll: boolean; isDark?: boolean }>`
 
 export const Logo = styled.h1``
 
+export const MenuBox = styled.div`
+  display: flex;
+`
+
 export const MenuButton = styled.button`
   background: transparent;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
+
+  & + & {
+    margin-left: 15px;
+  }
 `

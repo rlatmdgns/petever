@@ -3,7 +3,8 @@ const ICON_PATH = '/icons'
 
 export const IMAGES = {
   LOGO: `${IMAGE_PATH}/logo.svg`,
-  MAIN_LEFT: `${IMAGE_PATH}/main_left.svg`,
+  MAIN_LEFT_FOOT: `${IMAGE_PATH}/main_left_foot.svg`,
+  MAIN_LEFT_LOGO: `${IMAGE_PATH}/main_left_logo.svg`,
   DEFAULT_BANNER: `${IMAGE_PATH}/default-banner.png`,
   PETEVER_MAGAZINE: `${IMAGE_PATH}/petever_magazine.svg`,
   META: `${IMAGE_PATH}/meta.png`,
@@ -16,7 +17,8 @@ export const IMAGES = {
  * New Design System Icons
  */
 export const ICONS = {
-  MENU: `${ICON_PATH}/icon_hambuger.svg`,
   KAKAO: `${ICON_PATH}/icon_kakao.svg`,
   GOOGLE: `${ICON_PATH}/icon_google.svg`,
+  MENU: `${ICON_PATH}/icon_hambuger.svg`,
+  PROFILE: `${ICON_PATH}/icon_profile.svg`,
 }

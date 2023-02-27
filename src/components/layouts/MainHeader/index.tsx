@@ -43,9 +43,16 @@ const MainHeader = ({ isDark }: MainHeaderProps) => {
           <Image src={IMAGES.LOGO} alt="펫에버" width={28} height={22} />
         </Link>
       </Styles.Logo>
-      <Styles.MenuButton>
-        <Image src={ICONS.MENU} alt="메뉴" width={24} height={24} />
-      </Styles.MenuButton>
+      <Styles.MenuBox>
+        <Styles.MenuButton>
+          <Link href={PAGE.LOGIN}>
+            <Image src={ICONS.PROFILE} alt="프로필" width={24} height={24} />
+          </Link>
+        </Styles.MenuButton>
+        <Styles.MenuButton>
+          <Image src={ICONS.MENU} alt="메뉴" width={24} height={24} />
+        </Styles.MenuButton>
+      </Styles.MenuBox>
     </Styles.Wrapper>
   )
 }
