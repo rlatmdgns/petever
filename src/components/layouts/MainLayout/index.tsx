@@ -19,14 +19,18 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <Styles.Wrapper>
       <Styles.Left>
-        <Styles.Title>
+        <Styles.TitleBox>
           <Image
-            src={IMAGES.MAIN_LEFT}
-            alt="반려동물 커뮤니티 펫에버"
-            width={769}
-            height={616}
+            src={IMAGES.MAIN_LEFT_LOGO}
+            alt="펫에버"
+            width={120}
+            height={120}
           />
-        </Styles.Title>
+          <Styles.Title>
+            <em>반려동물 커뮤니티</em> <br />
+            펫에버
+          </Styles.Title>
+        </Styles.TitleBox>
       </Styles.Left>
       <Styles.Right>{children}</Styles.Right>
     </Styles.Wrapper>

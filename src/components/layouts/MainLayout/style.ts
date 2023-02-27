@@ -35,18 +35,29 @@ export const Left = styled.section`
   ${(props) => props.theme.viewSizes.PC} {
     display: block;
     position: fixed;
-    left: calc(50vw - 769px);
+    left: calc(53vw - 620px);
     z-index: 0;
     width: 100%;
-    max-width: 769px;
+    max-width: 620px;
     height: 100%;
     padding: 50px 0;
+    background: url(${IMAGES.MAIN_LEFT_FOOT}) no-repeat right 65%;
   }
 `
 
-export const Title = styled.p`
+export const TitleBox = styled.div`
   position: fixed;
   top: 28%;
+`
+
+export const Title = styled.p`
+  margin-top: 40px;
+  font-size: 54px;
+  line-height: 80px;
+
+  em {
+    font-weight: ${(props) => props.theme.fontWeights.BOLD};
+  }
 `
 
 export const Right = styled.div`
