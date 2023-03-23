@@ -3,6 +3,7 @@ import * as Styles from './style'
 import { ICONS, IMAGES, PAGE } from '@/constants'
 import Image from 'next/image'
 import Link from 'next/link'
+import Menus from '@/components/molecules/Menus'
 
 interface MainHeaderProps {
   isDark?: boolean
@@ -10,9 +11,14 @@ interface MainHeaderProps {
 
 const MainHeader = ({ isDark }: MainHeaderProps) => {
   const [isScroll, setIsScroll] = useState(false)
+  const [isMenu, setIsMenu] = useState(false)
   const handleScroll = () => {
     const active = window.scrollY > 0
     setIsScroll(active)
+  }
+
+  const handleMenuClick = () => {
+    setIsMenu(!isMenu)
   }
 
   useEffect(() => {
@@ -21,21 +27,7 @@ const MainHeader = ({ isDark }: MainHeaderProps) => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
-  // const { data: categories } = useQuery([QUERY_KEY.CATEGORY], getCategory)
-  // const menus = [
-  //   {
-  //     label: 'Contents',
-  //     path: PAGE.BOARD,
-  //   },
-  //   {
-  //     label: 'Community',
-  //     path: PAGE.COMMUNITY,
-  //   },
-  //   {
-  //     label: '로그인',
-  //     path: PAGE.SIGN_IN,
-  //   },
-  // ]
+
   return (
     <Styles.Wrapper isScroll={isScroll} isDark={isDark}>
       <Styles.Logo>
@@ -49,10 +41,11 @@ const MainHeader = ({ isDark }: MainHeaderProps) => {
             <Image src={ICONS.PROFILE} alt="프로필" width={24} height={24} />
           </Link>
         </Styles.MenuButton>
-        <Styles.MenuButton>
-          <Image src={ICONS.MENU} alt="메뉴" width={24} height={24} />
+        <Styles.MenuButton onClick={handleMenuClick}>
+          <Styles.Hamburger isMenu={isMenu}></Styles.Hamburger>
         </Styles.MenuButton>
       </Styles.MenuBox>
+      {isMenu && <Menus />}
     </Styles.Wrapper>
   )
 }

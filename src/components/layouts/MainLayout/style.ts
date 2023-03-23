@@ -63,8 +63,9 @@ export const Title = styled.p`
 export const Right = styled.div`
   position: relative;
   min-height: 100vh;
+  max-width: 482px;
+  margin: 0 auto;
   background-color: #fff;
-  padding: 0 0 56px 0;
 
   ${(props) => props.theme.viewSizes.PC} {
     &:before {
@@ -79,20 +80,7 @@ export const Right = styled.div`
       z-index: -1;
     }
 
-    // &:before {
-    //   display: block;
-    //   content: '';
-    //   position: fixed;
-    //   left: 40vw;
-    //   top: 0;
-    //   width: 620px;
-    //   height: 240px;
-    //   background: url(${IMAGES.BACKGROUND02}) no-repeat;
-    //   z-index: -1;
-    // }
-
     margin: 0 0 0 calc(55vw);
-    max-width: 482px;
     border-width: 0 1px;
     border-style: solid;
     border-color: #e1e1e1;
