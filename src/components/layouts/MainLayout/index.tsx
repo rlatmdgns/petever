@@ -32,7 +32,10 @@ const MainLayout = ({ children }: MainLayoutProps) => {
           </Styles.Title>
         </Styles.TitleBox>
       </Styles.Left>
-      <Styles.Right>{children}</Styles.Right>
+      <Styles.Right>
+        <div id="root"></div>
+        {children}
+      </Styles.Right>
     </Styles.Wrapper>
   )
 }

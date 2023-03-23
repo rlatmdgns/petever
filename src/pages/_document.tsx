@@ -5,7 +5,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document'
-import { Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 interface StyledProps {
